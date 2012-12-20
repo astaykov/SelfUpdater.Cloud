@@ -27,7 +27,7 @@ The first step is to register SelfUpdater.Core as RoleEntryPoint in the __.csdef
 			<NetFxEntryPoint assemblyName="SelfUpdater.Core.dll" />
 			</EntryPoint>
 		</Runtime>
-Please not that the __elevated__ execution context. It is required because the process will stop IIS Site, copy files to the BIN folder and then start the IIS site again.
+Please note the __elevated__ execution context. It is required because the process will stop IIS Site, copy files to the BIN folder and then start the IIS site again.
 
 ### Update checks ###
 There is a process, which is being executed every __N__ seconds. You configure this in the Service Configuration 
