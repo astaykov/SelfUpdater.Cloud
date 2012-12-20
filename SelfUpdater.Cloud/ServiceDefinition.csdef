@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="SelfUpdater.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2012-10.1.8">
+  <WebRole name="SelfUpdater.Web" vmsize="ExtraSmall">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    </Endpoints>
+    <Imports>
+    </Imports>
+    <Runtime executionContext="elevated">
+      <EntryPoint>
+        <NetFxEntryPoint assemblyName="SelfUpdater.Core.dll" />
+      </EntryPoint>
+    </Runtime>
+    <ConfigurationSettings>
+      <Setting name="SelfUpdater.Core.StorageConnectionString" />
+      <Setting name="SelfUpdater.Core.BlobContainer" />
+      <Setting name="SelfUpdater.Core.BlobContainerLeasing" />
+      <Setting name="SelfUpdater.Core.CheckIntervalInSeconds" />
+    </ConfigurationSettings>
+  </WebRole>
+</ServiceDefinition>

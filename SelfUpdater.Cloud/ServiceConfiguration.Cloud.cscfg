@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="SelfUpdater.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*" schemaVersion="2012-10.1.8">
+  <Role name="SelfUpdater.Web">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="SelfUpdater.Core.StorageConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="SelfUpdater.Core.BlobContainer" value="deploy" />
+      <Setting name="SelfUpdater.Core.BlobContainerLeasing" value="lease" />
+      <Setting name="SelfUpdater.Core.CheckIntervalInSeconds" value="60" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
